@@ -16,7 +16,7 @@
 
 body {
   font-family: 'Segoe UI', 'Roboto', sans-serif; /* Formal, clean font */
-  background: url("bg.jpg") no-repeat center center fixed;
+  background: url("bgs.jpg") no-repeat center center fixed;
   background-size: cover;
   color: var(--text);
   line-height: 1.8;
