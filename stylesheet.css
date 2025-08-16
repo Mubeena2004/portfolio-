@@ -1,0 +1,299 @@
+/* ===========================
+   Variables
+=========================== */
+:root {
+  --accent: #e16907;    /* Professional accent color */
+  --bg: #25e3c7;
+  --card: #f51f31;
+  --text: #e5e5e5;      /* Neutral text color for readability */
+  --muted: #bbbbbb;
+}
+
+/* ===========================
+   Reset & Base
+=========================== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', 'Roboto', sans-serif; /* Formal, clean font */
+  background: url("bgs.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text);
+  line-height: 1.8;
+  position: relative;
+  font-style: normal;  /* Remove italics for formal look */
+}
+
+/* Dark overlay for contrast */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: -1;
+}
+
+a { color: inherit; text-decoration: none; }
+.container { width: min(1100px, 92%); margin: auto; }
+
+/* ===========================
+   Header
+=========================== */
+header.header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(129, 121, 115, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.navwrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 5%;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+nav.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+nav.navbar a {
+  margin: 0 12px 8px 0;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-style: oblique;
+  font-weight: 500;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(45deg, #ec0db1, #11ce69);
+  transition: 0.2s;
+  box-shadow: 0 4px #1f2021;
+}
+
+/* ===========================
+   Home Section
+=========================== */
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 40px;
+  min-height: 50vh;
+}
+
+.home-img img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent);
+  box-shadow: 0 0 20px rgba(11, 205, 219, 0.6);
+  margin: 0 auto;
+}
+
+.home-content h1 {
+  font-size: 2.5rem;
+  text-align: left;
+  font-style: normal;
+}
+
+/* ===========================
+   About Section (Formal)
+=========================== */
+#about p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text);
+    font-style: normal;
+    margin-bottom: 20px;
+}
+
+#about .list {
+    list-style: disc inside;
+    padding-left: 0;
+    margin: 0;
+    line-height: 1.6;
+}
+
+#about .list li {
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-style: normal;
+    color: var(--text);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+#about .list i {
+    color: var(--accent);
+    margin-top: 2px;
+}
+
+/* ===========================
+   Education & Skills
+=========================== */
+.edu, .skills-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.edu .edu-item, .skill-column {
+  background: rgba(20,20,40,0.5);
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+
+.edu .edu-item:hover, .skill-column:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.edu .edu-item h3, .skill-column h3 {
+  color: var(--accent);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.edu .edu-item p, .skills-list li {
+  color: var(--text);
+}
+
+/* ===========================
+   Skills Section
+=========================== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.skill-column h3 {
+    color: var(--accent);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 10px;
+    text-align: center;
+}
+
+.skills-list li {
+    font-weight: 500;
+    color: var(--text);
+}
+
+/* ===========================
+   Contact Section
+=========================== */
+form { display: grid; gap: 15px; }
+input, textarea {
+    background: #0f1626;
+    color: var(--text);
+    border: 1px solid #2b3a55;
+    padding: 10px 12px;
+    border-radius: 10px;
+}
+textarea { min-height: 150px; resize: vertical; }
+
+/* ===========================
+   Buttons
+=========================== */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  background: var(--card);
+  color: var(--text);
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #1E3A8A, #2563EB);
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(30,58,138,0.5);
+}
+
+.btn.primary:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 8px 25px rgba(30,58,138,0.7);
+}
+
+
+/* ===========================
+   Footer
+=========================== */
+footer {
+    padding: 30px 0 50px;
+    color: var(--muted);
+    text-align: center;
+    border-top: 1px solid #1f2b45;
+    margin-top: 90px;
+}
+
+/* Section Titles */
+h2.section-title {
+    font-size: 2rem;
+    margin-bottom: 22px;
+    color: var(--accent);
+    font-weight: 700;
+}
+/* Social Icons */
+.home-sci a {
+  font-size: 30px; /* Increase size from 40px to 50px */
+  color: #f5f4f4;
+  margin: 0 12px;
+  transition: all 0.3s ease;
+}
+
+.home-sci a:hover {
+  color: var(--accent);
+  transform: scale(1.3); /* Slightly bigger on hover */
+  text-shadow: 0 0 12px var(--accent), 0 0 25px var(--accent);
+}
+/* Typing Animation for Name */
+.typing {
+  font-size: 3rem;
+  font-family: 'Lobster', cursive;
+  color: #f2f2f7;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;   /* Important so width animation works */
+  width: 0;
+  animation: typing 4s steps(25, end) forwards;
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 22ch; } /* Adjust to match characters length */
+}
